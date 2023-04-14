@@ -8,7 +8,7 @@ module.exports = {
     return db('agenda')
   },
 
-  getContatosByName(user_name) {
+  getContatosById_user(id_user) {
     return db('agenda').where({ id_user }).select()
   },
 
@@ -17,10 +17,10 @@ module.exports = {
   },
 
   updateContato(id, dadosContato) {
-    return db('agenda').where({ id_agenda }).update(dadosContato)
+    return db('agenda').where(id_agenda).update(dadosContato)
   },
 
   deleteContato(id_contato) {
-    return db('agenda').where({ id_agenda }).del()
+    return db('agenda').where(id_agenda).del()
   }
 }
