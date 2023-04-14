@@ -1,7 +1,7 @@
 const knex = require('knex')
 const knexConfig = require('../knexfile')
 
-const db = knex(knexConfig.development)
+const db = knex(knexConfig.development);
 
 module.exports = {
   getAllUsers() {
@@ -24,3 +24,4 @@ module.exports = {
     return db('users').where({ id }).del()
   }
 }
+
