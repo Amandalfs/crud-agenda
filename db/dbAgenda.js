@@ -9,18 +9,18 @@ module.exports = {
   },
 
   getContatosById_user(id_user) {
-    return db('agenda').where({ id_user }).select()
+    return db('agenda').where(id_user).select()
   },
 
   createContato(contato) {
     return db('agenda').insert(contato)
   },
 
-  updateContato(id, dadosContato) {
+  updateContato(id_agenda, dadosContato) {
     return db('agenda').where(id_agenda).update(dadosContato)
   },
 
-  deleteContato(id_contato) {
+  deleteContato(id_agenda) {
     return db('agenda').where(id_agenda).del()
   }
 }
