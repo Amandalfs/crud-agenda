@@ -1,3 +1,4 @@
+const { config } = require('dotenv')
 const knex = require('knex')
 
 module.exports = {
@@ -8,10 +9,8 @@ module.exports = {
       }
     },
     production: {
-      client: 'sqlite3',
-      connection: {
-        filename: './prod.sqlite3'
-      }
+      client: 'postgreSQL',
+      connection: process.env.PG_CONNECTION_STRING
     }
   }
   

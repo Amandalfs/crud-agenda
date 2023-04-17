@@ -2,7 +2,7 @@ const db = require('../../db/dbUsers');
 
 const createUser = async (app) => {
   app.route('/users/create')
-    .put(async(req, res)=>{
+    .post(async(req, res)=>{
       const {name, email} = await req.body;
       const {senha} = await req.headers;
       let users = await db.getAllUsers()
