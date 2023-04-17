@@ -6,15 +6,24 @@ const createUser = async (app) => {
       const {name, email} = await req.body;
       const {senha} = await req.headers;
       let users = await db.getAllUsers()
+      valueBoolean = false;
       users.map((user)=>{
         if(user.email===email){
-          return res.status(401).send("A conta com esse email ja existe");
+          valueBoolean = true;
         }
       })
-      users = db.createUser({ name: name, email: email, senha: senha })
+
+      if(valueBoolean){
+        return res.status(401).send("A conta com esse email ja existe");
+      } else {
+        users = await db.createUser({ name: name, email: email, senha: senha })
         .then(() => db.getAllUsers())
         .then(users => {return users})
-      res.send({"msg":"conta criada com sucesso",users}).status(201);
+      
+        res.status(201).send({"msg":"conta criada com sucesso","id_user":users[users.length-1].id_user});
+      }
+
+      
     })
 }
 
