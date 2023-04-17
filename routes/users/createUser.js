@@ -9,7 +9,7 @@ const createUser = async (app) => {
       valueBoolean = false;
       users.map((user)=>{
         if(user.email===email){
-          valueBoolean = true;
+          return valueBoolean = true;
         }
       })
 
@@ -19,7 +19,6 @@ const createUser = async (app) => {
         users = await db.createUser({ name: name, email: email, senha: senha })
         .then(() => db.getAllUsers())
         .then(users => {return users})
-      
         res.status(201).send({"msg":"conta criada com sucesso","id_user":users[users.length-1].id_user});
       }
 
