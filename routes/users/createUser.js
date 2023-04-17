@@ -8,7 +8,7 @@ const createUser = async (app) => {
       let users = await db.getAllUsers()
       users.map((user)=>{
         if(user.email===email){
-          return res.send("A conta com esse email ja existe").status(401);
+          return res.status(401).send("A conta com esse email ja existe");
         }
       })
       users = db.createUser({ name: name, email: email, senha: senha })
