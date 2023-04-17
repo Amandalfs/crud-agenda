@@ -6,11 +6,13 @@ module.exports = {
       client: 'sqlite3',
       connection: {
         filename: './db/database.sqlite3'
-      }
+      },
+      useNullAsDefault: true
     },
     production: {
       client: 'postgreSQL',
-      connection: process.env.PG_CONNECTION_STRING
+      connection: process.env.PG_CONNECTION_STRING,
+      useNullAsDefault: true
     }
   }
   
