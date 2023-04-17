@@ -17,7 +17,8 @@ function up(){
 }
 
 function down(){
-  db.schema.dropTable('users', function(){
-
-  })
+  db.schema.dropTable('users')
+    .then(console.log("tabela excluida"))
 }
+
+up()
