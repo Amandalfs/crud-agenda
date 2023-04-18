@@ -15,17 +15,14 @@ module.exports = {
       }
     },
     production: {
-      client: 'postgreSQL',
+      client: 'pg',
       connection: process.env.PG_CONNECTION_STRING,
       useNullAsDefault: true,
-      pool: {
-        min: 2,
-        max: 10
-      },
       migrations: {
         tableName: 'migrations',
         directory: './db/migrations'
-      }
+      },
+      searchPath: ['knex', 'public']
     }
   }
   

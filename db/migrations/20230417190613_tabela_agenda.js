@@ -6,7 +6,7 @@ exports.up = function(knex) {
     knex.schema.createTable("agenda", function (tabela) {
         tabela.increments("id_agenda").primary();
         tabela.text("id_user").notNull();
-        tabela.int("name").notNull();
+        tabela.text("name").notNull();
         tabela.text("email").notNull();
         tabela.text("telefone").notNull();
      }).then(function () {
