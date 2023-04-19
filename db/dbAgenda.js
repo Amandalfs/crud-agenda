@@ -16,6 +16,10 @@ module.exports = {
     return db('agenda').where(id_user).select()
   },
 
+  getContatosById_agenda(id_agenda){
+    return db('agenda').where(id_agenda).select()
+  },
+
   createContato(contato) {
     return db('agenda').insert(contato)
   },
