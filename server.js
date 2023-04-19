@@ -9,6 +9,7 @@ const login = require('./routes/users/loginUser');
 const adicionar = require('./routes/agenda/adicionar');
 const deleta = require('./routes/agenda/deleta');
 const contatos = require('./routes/agenda/contatos');
+const editar = require('./routes/agenda/editar');
 
 const app = express();
 
@@ -23,6 +24,7 @@ login(app);
 adicionar(app);
 deleta(app)
 contatos(app);
+editar(app)
 
 app.get('/', (req,res)=>{
     res.send("Bem vindo ao crud da agenda")
