@@ -2,12 +2,16 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = function(knex) {
+
+import knex, { Knex } from "knex";
+
+
+exports.up = function(knex:Knex) {
     knex.schema.createTable("users", function (tabela) {
         tabela.increments("id_user").primary();
-        tabela.text("name").notNull();
-        tabela.text("email").notNull();
-        tabela.text("senha").notNull();
+        tabela.text("name").notNullable();
+        tabela.text("email").notNullable();
+        tabela.text("senha").notNullable();
      }).then(function () {
        console.log('Tabela "users" criada com sucesso!');
      }).catch(function (error) {
@@ -19,7 +23,9 @@ exports.up = function(knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function(knex) {
+exports.down = function(knex:Knex) {
     knex.schema.dropTable('users')
-    .then(console.log("tabela excluida"))
+    .then(()=>{
+      console.log("tabela excluida");
+    })
 };
