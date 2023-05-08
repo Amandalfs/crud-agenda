@@ -2,13 +2,13 @@
   "name": "crud-agenda",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "./dist/server.js",
   "engines": {
     "node": "18"
   },
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "build": "npx tsc --build",
+    "build": "npm tsup src",
     "clean": "tsc --build --clean",
     "start": "node ./dist/server.js"
   },
