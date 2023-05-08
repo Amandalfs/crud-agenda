@@ -1,0 +1,53 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api Agenda Documentacao", 
+        "description": "Api Agenda",
+        "version": "1.5",
+        "contact": {
+            "email": "amandalfs57@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": ["users"],
+                "sumary": "criacao usuarios",
+                "description": "Criacao de um novo usuario",
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"    
+                                    },
+                                    "email":{
+                                        "type": "string"
+                                    }, 
+                                    "senha":{
+                                        "type": "string"
+                                    }
+                                },
+                                "example":{
+                                    "name": "userTest",
+                                    "email": "user@test.com",
+                                    "senha": "user#123.Test"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201":{
+                        "description": "Conta Criada Com sucesso"
+                    }, 
+                    "401": {
+                        "description": "uma conta com o email ja existe"
+                    }
+                }
+            }
+        }
+    }
+}

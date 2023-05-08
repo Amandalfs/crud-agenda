@@ -15,7 +15,7 @@ class UsersController {
             res.status(201).send({"msg":"conta criada com sucesso"});
             
         } catch (err) {
-            res.status(400).json(`${err}`);   
+            res.status(400).json({error: err.message});   
         }
         
     }
@@ -32,7 +32,7 @@ class UsersController {
             return res.status(201).json({id_user:id_user});
             
         } catch (err) {
-            res.status(400).json(`${err}`); 
+            res.status(400).json({error: err.message}); 
         }
     }
 }
