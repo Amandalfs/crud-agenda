@@ -10,7 +10,7 @@
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "build": "tsup src",
     "clean": "tsc --build --clean",
-    "start": "node /dist/server.js"
+    "start": "node ./dist/server.js"
   },
   "repository": {
     "type": "git",
