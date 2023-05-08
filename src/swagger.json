@@ -47,6 +47,37 @@
                         "description": "uma conta com o email ja existe"
                     }
                 }
+            },
+            "get": {
+                "tags": ["users"],
+                "sumary": "Login de usuario",
+                "description": "verificação para ver se o usuario é ele mesmo para entrar no seus contatos",
+                "requestBody": {
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "email":{
+                                    "type": "string"
+                                },
+                                "senha":{
+                                    "type": "string"
+                                },
+                                "example":{
+                                    "name":"user@test.com",
+                                    "senha":"user#123.Test"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201":{
+                        "description":"id_user:  15"
+                    },
+                    "401": {
+                        "description": "usuario nao tem uma conta"
+                    }
+                }
             }
         }
     }
