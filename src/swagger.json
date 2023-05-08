@@ -79,6 +79,74 @@
                     }
                 }
             }
+        },
+        "/contacts":{
+            "post":{
+                "tags": ["contacts"],
+                "sumary": "Criacao de Contato",
+                "description": "criacaocao de um contato novo de acordo com usuario",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "type":"string"
+                                    },
+                                    "email":{
+                                        "type":"string"
+                                    },
+                                    "telefone":{
+                                        "type":"string"
+                                    },
+                                    "id_user":{
+                                        "type": "number"
+                                    }
+                                },
+                                "example":{
+                                    "name": "User",
+                                    "email": "user@test.com",
+                                    "telefone": "(33) 3333-3333",
+                                    "id_user": 5
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201":{
+                        "description": "criado com sucesso"
+                    }
+                }
+            },
+            "get":{
+                "tags":["contacts"],
+                "sumary":"Lista de contatos",
+                "description": "lista de contatos por id de usuario",
+                 "requestBody":{
+                    "content":{
+                        "application/json": {
+                            "schema": {
+                                "type":"object",
+                                "properties":{
+                                    "id_user":{
+                                        "type":"number"
+                                    }
+                                },
+                                "example": {
+                                    "id_user":5
+                                }
+                            }
+                        }
+                    }
+                 },
+                 "responses":{
+                    "200":{
+                        "description": "Contatos:[lista]"
+                    }
+                }
+            }
         }
     }
 }
