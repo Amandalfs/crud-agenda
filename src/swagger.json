@@ -185,6 +185,37 @@
                         "description":"contatoAtualizado:{UmObjetoComAsInformacoesNovas}"
                     }
                 }
+            },
+            "delete":{
+                "tags":["contacts"],
+                "sumary": "Deleta Contato",
+                "description": "Excluir contato de acordo com o id_agenda",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "properties":{
+                                    "id_user":{
+                                        "type":"number"
+                                    },
+                                    "id_agenda":{
+                                        "type":"number"
+                                    }
+                                },
+                                "example":{
+                                    "id_agenda": 1,
+                                    "id_user": 3
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                         "description":"Contato Deletado com sucesso"
+                    }
+                }
             }
         }
     }
