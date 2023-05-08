@@ -146,6 +146,45 @@
                         "description": "Contatos:[lista]"
                     }
                 }
+            },
+            "put":{
+                "tags":["contacts"],
+                "sumary": "Atualizacao de um contato",
+                "description": "atualizando um contato especifico de acordo com o id",
+                "requestBody":{
+                    "content":{
+                        "application/json": {
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "id_agenda":{
+                                        "type":"number"
+                                    },
+                                    "name":{
+                                        "type":"string"
+                                    },
+                                    "email":{
+                                        "type":"string"
+                                    }, 
+                                    "telefone":{
+                                        "type": "string"
+                                    }
+                                },
+                                "example":{
+                                    "id_agenda": 30,
+                                    "name":"User",
+                                    "email":"user@test.com",
+                                    "telefone":"(88) 8888-8888"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200": {
+                        "description":"contatoAtualizado:{UmObjetoComAsInformacoesNovas}"
+                    }
+                }
             }
         }
     }
