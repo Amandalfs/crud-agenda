@@ -1,0 +1,19 @@
+{
+    "material-icon-theme.activeIconPack": "angular",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.hidesExplorerArrows": false,
+    "material-icon-theme.languages.associations": {
+
+    },
+    "material-icon-theme.files.associations": {
+        "infra": "app",
+        "entities": "class",
+        "domain": "class",
+        "schemas": "class",
+        "typeorm": "database",
+        "repositories": "mappings",
+        "migrations": "tools",
+        "implementations": "core",
+        ""
+    }
+}

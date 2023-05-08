@@ -1,7 +1,11 @@
-const { config } = require('dotenv');
+import { config } from "dotenv";
 config();
 
-module.exports = {
+interface KnexConfig {
+  [key: string]: object;
+};
+
+export const configs:KnexConfig =  {
     development: {
       client: 'sqlite3',
       connection: {
