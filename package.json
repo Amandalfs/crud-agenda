@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "build": "npx tsc --build",
-    "clean": "tsc --build --clean"
+    "clean": "tsc --build --clean",
+    "start": "node ./dist/src/server.js"
   },
   "repository": {
     "type": "git",

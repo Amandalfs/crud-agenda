@@ -8,6 +8,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "resolveJsonModule": true,
+    "outDir": "dist"
   },
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
